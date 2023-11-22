@@ -45,9 +45,16 @@ body{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 60%;
 }
 .date{
-  margin: 1vw;
+  color: var(--gray-9, #20252A);
+margin-top: 40px;
+ margin-bottom: 20px;
+font-size: 48px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
 }
 .datecon{
   display: flex;
@@ -63,41 +70,99 @@ body{
   transition: all .2s ease-in;
 }
 .word{
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  background-color:red;
-  font-size:xx-small;
-  /* font-family: 'Open Sans', sans-serif; */
-  font-weight: bold; 
-  width: 21vw;
-  padding: 1%;
-  margin: 1vw;
-  border-radius: 3%;
-  position: relative;
-}
-.word::before{
-  content:'';
-  position: absolute;
-  height: 50px;
-  width: 21vw;
-  background-color: aqua;
-  top: -50px;
-  left: 0px;
-}
-.wordheading{
-  font-weight: bolder;
-  width: 100%;
+  border: 1px solid var(--primary-2, #9CC3FF);
   display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 7vh;
+  flex-direction: column;
+  width: 23%;
+  padding: 30px 50px;
+  border-radius: 6px;
 }
-.header{
+
+.wordheading{
+  color: var(--gray-9, #20252A);
+font-size: 34px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: 0.25px;
+}
+
+.wordFunc{
+  border:none;
+  border-radius: 4px;
+background: var(--primary-0, #E5F4FF);
+color: var(--primary-6, var(--Blue-primary, #0969FF));
+font-size: 12px;
+margin: 0px 4px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: 1.5px;
+padding: 4px 8px;
+}
+.wordInput{
+  padding:10px 20px;
+  width: 80%;
+  border-radius: 6px; 
+  border:1px solid #9CC3FF;
+  font-size: 16px;
+  color:#868E96;
+  letter-spacing: 0.5px;
+  margin-top: 40px;
+}
+.meaningInput{
+  padding:10px 20px;
+  width: 80%;
+  border-radius: 6px; 
+  border:1px solid #9CC3FF;
+  font-size: 16px;
+  color:#868E96;
+  letter-spacing: 0.5px;
+  height:20vh;
+  margin-top: 40px;
+}
+.addButton{
+  padding: 18px 48px;
+  background: var(--Blue-primary, #0969FF);
+  border-radius: 4px;
+color: var(--White, #FFF);
+font-family: Montserrat;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: 0.15px;
+margin-top: 40px;
+}
+.mainCon{
   display: flex;
   flex-direction: row;
 }
-button{
-  background-color: transparent;
-  border: none;
-  font-size: xx-small;
+.wordMeaning{
+  color: var(--gray-9, #20252A);
+font-family: Montserrat;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: 32px; /* 160% */
+letter-spacing: 0.15px;
+}
+.exH{
+  color: var(--gray-6, #868E96);
+font-family: Montserrat;
+font-size: 14px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: 1.5px;
+}
+.wordExapmle{
+  color: var(--gray-9, #20252A);
+font-family: Montserrat;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: 32px; /* 160% */
+letter-spacing: 0.15px;
 }
 

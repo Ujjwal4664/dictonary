@@ -33,14 +33,17 @@ export const AddWord = () => {
   useEffect(() => {
     // You can call save() here if needed, based on your component's logic.
     // Remember to clean up any resources when the component unmounts if necessary.
-  }, []); 
+  }, []);   
 
   return (
+    <div className='mainCon'>
+    <img src='./images/dictionary.svg' style={{width:'30%'}}/>
     <div className="form">
-      <input type="text" value={word} onChange={(e) => changeWord(e.target.value)} />
-      <textarea value={meaning} onChange={(e) => changeMeaning(e.target.value)} />
-      <textarea value={example} onChange={(e) => changeExample(e.target.value)} />
-      <button onClick={(e) => { clearFields(); save(e); }}>add</button>
+      <input type="text" value={word} onChange={(e) => changeWord(e.target.value)} placeholder='word' className='wordInput'/>
+      <textarea value={meaning} onChange={(e) => changeMeaning(e.target.value)} placeholder='word meaning' className='meaningInput'/>
+      <textarea value={example} onChange={(e) => changeExample(e.target.value)} placeholder='example' className='meaningInput'/>
+      <button onClick={(e) => { clearFields(); save(e); }} className='addButton'>ADD</button>
+    </div>
     </div>
   );
 };

@@ -46,26 +46,26 @@ export const Word=({ word, setWords, showWordsLinked })=>{
     return(
         <div className="word" key={word._id}>
             <div className="header">
-                <h2 className="wordheading">{word.word}</h2>
-                <button className="speech" onClick={() => handleSpeak(word.word)}>
+               
+                <button  className="wordFunc" onClick={() => handleSpeak(word.word)}>
                     speak
                 </button>
-                <button className="delete" onClick={() => handleDelete(word._id)}>
+                <button className="wordFunc" onClick={() => handleDelete(word._id)}>
                     delete
                 </button>
                     
                 {/* <button className="link" onClick={() => setShowAllWords(true)}>
                     Link
                 </button> */}
-                <button onClick={()=>show(word.linkedWords,word._id)}>
+                <button onClick={()=>show(word.linkedWords,word._id)} className='wordFunc'>
                     linkedWords
                 </button>
+                <h2 className="wordheading">{word.word}</h2>
             </div>
-            {word.meaning}
-            <br />
-            <br />
-            {word.example}
-            <br />
+            <h2 className="wordMeaning">{word.meaning}</h2>
+<h2 className='exH'>Example</h2>
+            <h2 className="wordExapmle">{word.example}</h2>
+
             {word._id === selected && (
                 <ul>
                 {simmilar.map((similarWord, index) => (

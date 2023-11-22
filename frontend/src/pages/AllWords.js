@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useSpeechSynthesis } from 'react-speech-kit';
+import { AddWord } from './AddWord';
 import {Word} from "../components/Word"
 export const AllWords = () => {
   // State variable to store the list of words
@@ -15,7 +16,7 @@ export const AllWords = () => {
     async function fetchWords() {
       try {
         const response = await axios.get('http://localhost:5000/word/savedWords');
-        
+
         // Sort the words based on the date string
         const sortedWords = response.data.words.sort((a, b) => {
           // Convert date strings to Date objects for comparison
@@ -29,11 +30,11 @@ export const AllWords = () => {
             parseInt(b.date.split('/')[1]), // Month (0-based)
             parseInt(b.date.split('/')[0])    // Day
           );
-          
+
           // Compare the Date objects
           return dateB - dateA;
         });
-        
+
         setWords(sortedWords);
       } catch (error) {
         console.error('Error fetching words:', error);
@@ -52,7 +53,7 @@ export const AllWords = () => {
     groupedWords[word.date].push(word);
   });
 
-  
+
 
   const handleDelete = async (wordId) => {
     try {
@@ -107,7 +108,7 @@ export const AllWords = () => {
   };
 
   return (
-    <>
+    <div>
       <div>
         {/* Show the "Link Selected Words" button only if no words are linked yet */}
         {linkedWords.length === 0 && (
@@ -117,7 +118,7 @@ export const AllWords = () => {
 
       {/* Conditionally render the "All Words" section */}
       {showAllWords && (
-        <div>
+        <div style={{ width: '80%' }}>
           <h2>Select Words to Link:</h2>
           {words.map((word) => (
             <div key={word._id}>
@@ -148,7 +149,7 @@ export const AllWords = () => {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
